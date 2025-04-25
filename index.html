@@ -2,28 +2,27 @@
 <html lang="en">
 <head>
   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-65ZVJRBRXM"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-65ZVJRBRXM');
-</script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eminetic - Kreativni Dizajn Budućnosti</title>
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="icon" href="logoologo-removebg-preview.png" type="image/x-icon">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.cdnfonts.com/css/bastliga-one" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Futura:wght@400;700&family=Helvetica+Neue:wght@300;400;700&display=swap" rel="stylesheet">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-65ZVJRBRXM"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-65ZVJRBRXM');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eminetic - Kreativni Dizajn Budućnosti</title>
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="icon" href="logoologo-removebg-preview.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.cdnfonts.com/css/bastliga-one" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Futura:wght@400;700&family=Helvetica+Neue:wght@300;400;700&display=swap" rel="stylesheet">
   <style>
     * {
       margin: 0;
@@ -308,14 +307,15 @@
       max-width: 800px;
       margin: 0 auto;
     }
+
     .about-text p {
-    font-size: clamp(0.8rem, 1.8vw, 1rem);
-    margin-bottom: 1rem;
-    background: rgba(10, 15, 45, 0.7);
-    color: white; /* da tekst bude čitljiv na tamnoj pozadini */
-    padding: 0.5rem; /* malo unutrašnjeg razmaka da tekst ne dodiruje ivice pozadine */
-    border-radius: 1rem; /* zaobljeni uglovi (nije obavezno) */
-}
+      font-size: clamp(0.8rem, 1.8vw, 1rem);
+      margin-bottom: 1rem;
+      background: rgba(10, 15, 45, 0.7);
+      color: white;
+      padding: 0.5rem;
+      border-radius: 1rem;
+    }
 
     .about canvas {
       position: absolute;
@@ -461,16 +461,16 @@
       box-shadow: 0 0 20px #00DDEB;
     }
 
-    .blog-post video {
+    .blog-post img {
       width: 100%;
       height: clamp(120px, 20vw, 150px);
-      object-fit: cover;
+      object-fit: contain;
       border-radius: 0.5rem;
       margin-bottom: 1rem;
     }
 
     .blog-post h3 {
-      font-size: clamp(0.9rem, 2.3vw, 1.3rem);
+      font-size: clamp(0.9rem, 2.3vw, 1.1rem);
     }
 
     .blog-post p {
@@ -500,7 +500,6 @@
     .book, .book-page {
       width: 100%;
       margin-left: -10px;
-
       height: 100%;
       position: absolute;
     }
@@ -859,6 +858,7 @@
         gap: clamp(1.5rem, 2vw, 2rem);
       }
     }
+
     .steampunkQuantumMatrix {
       max-width: 1300px;
       margin: 0 auto;
@@ -876,7 +876,7 @@
     }
 
     .aetherHeaderForge h1 {
-      font-size: 3.8rem;
+      font-size: 2.5rem;
       color: #fff;
       text-transform: uppercase;
       letter-spacing: 5px;
@@ -906,7 +906,6 @@
       position: relative;
       transform-style: preserve-3d;
       box-shadow: 0 0 20px rgba(10, 15, 45, 0.7);
-      ;
       cursor: pointer;
     }
 
@@ -995,7 +994,6 @@
         padding: 20px;
         max-width: 60%;
         top: -50px;
-
       }
 
       .brassGlyphCog {
@@ -1040,9 +1038,10 @@
     <div class="hero-content">
       <h1 class="glow">Eminetic</h1>
       <p>Crafting the Future of Web Design</p>
-     <a href="#portfolio"><button class="glow">Explore Our Work</button></a> 
+      <a href="#portfolio"><button class="glow">Explore Our Work</button></a>
     </div>
   </section>
+
   <div class="steampunkQuantumMatrix">
     <header class="aetherHeaderForge">
       <h1>naše usluge</h1>
@@ -1056,7 +1055,6 @@
         </div>
         <button class="aetherLeverTrigger" onclick="alert('Pokreni Web Dizajn')">Pokreni</button>
       </div>
-      
       <div class="mechanicalCogModule">
         <img class="brassGlyphCog" src="icons8-graphic-design-64.png" alt="Ikona Grafičkog Dizajna">
         <div class="steamTextConduit">
@@ -1065,7 +1063,6 @@
         </div>
         <button class="aetherLeverTrigger" onclick="alert('Pokreni Grafički Dizajn')">Pokreni</button>
       </div>
-      
       <div class="mechanicalCogModule">
         <img class="brassGlyphCog" src="https://img.icons8.com/ios/100/domain.png" alt="Ikona Kupovine Domene">
         <div class="steamTextConduit">
@@ -1074,7 +1071,6 @@
         </div>
         <button class="aetherLeverTrigger" onclick="alert('Pokreni Kupovinu Domene')">Pokreni</button>
       </div>
-      
       <div class="mechanicalCogModule">
         <img class="brassGlyphCog" src="icons8-seo-50.png" alt="Ikona SEO Optimizacije">
         <div class="steamTextConduit">
@@ -1083,7 +1079,6 @@
         </div>
         <button class="aetherLeverTrigger" onclick="alert('Pokreni SEO Optimizaciju')">Pokreni</button>
       </div>
-      
       <div class="mechanicalCogModule">
         <img class="brassGlyphCog" src="icons8-responsive-64.png" alt="Ikona Responsivnog Dizajna">
         <div class="steamTextConduit">
@@ -1092,7 +1087,6 @@
         </div>
         <button class="aetherLeverTrigger" onclick="alert('Pokreni Responsivni Dizajn')">Pokreni</button>
       </div>
-      
       <div class="mechanicalCogModule">
         <img class="brassGlyphCog" src="icons8-management-50.png" alt="Ikona Upravljanja Web Stranicom">
         <div class="steamTextConduit">
@@ -1101,10 +1095,9 @@
         </div>
         <button class="aetherLeverTrigger" onclick="alert('Pokreni Vođenje Stranice')">Pokreni</button>
       </div>
-      
-      </div>
     </div>
   </div>
+
   <!-- Services -->
   <section class="services" id="usluge">
     <div class="parallax-bg"></div>
@@ -1112,7 +1105,6 @@
     <div class="section-content">
       <h2 class="glow">Naši Paketi</h2>
       <div class="services-grid">
-  
         <div class="service-card glow">
           <h3>🎯 Osnovni Paket</h3>
           <p>✔️ Jedna stranica (Portfolio)<br>
@@ -1120,10 +1112,7 @@
              ✔️ Mobile-friendly</p>
              ✔️ Podrška 30 dana</p>
              ✔️ Kupovina domene (.com/.ba)<br>
-
-
         </div>
-  
         <div class="service-card glow">
           <h3>💡 Pro Paket</h3>
           <p>✔️ Višestrane stranice<br>
@@ -1132,7 +1121,6 @@
              ✔️ Brže učitavanje stranice<br>
              ✔️ Brendiranje</p>
         </div>
-  
         <div class="service-card glow">
           <h3>🔥 Premium Paket</h3>
           <p>✔️ Sve iz Pro paketa<br>
@@ -1140,7 +1128,6 @@
              ✔️ CMS (WordPress, custom, itd.)<br>
              ✔️ Vođenje i održavanje 6 mjeseci</p>
         </div>
-  
         <div class="service-card glow">
           <h3>👑 Ultimate Paket</h3>
           <p>✔️ 3D elementi i interaktivne animacije<br>
@@ -1149,12 +1136,9 @@
              ✔️ Social media integracija<br>
              ✔️ Digitalni marketing paket</p>
         </div>
-  
       </div>
     </div>
   </section>
-  
-  
 
   <!-- Portfolio -->
   <section class="portfolio" id="portfolio">
@@ -1276,17 +1260,15 @@
     <div class="section-content">
       <div class="blog-grid">
         <a href="web-animacije.html" class="blog-post glow">
-          <video autoplay loop muted playsinline>
-            <source src="anim1.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-          <h3>Budućnost Web Animacija</h3>
-          <p>Pregled trendova koji oblikuju digitalni pejzaž u 2025.</p>
+          <img src="slika3.jpg" alt="Novo partnerstvo">
+          <h3>Dogovorena izrada nove web stranice za Općinu Breza</h3>
+          <br>
+          <p>Sastanak sa načelnikom rezultirao partnerstvom!</p>
           <div class="button-wrapper">
             <button class="readmore-btn">
               <span class="book-wrapper">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="rgb(86, 69, 117)" viewBox="0 0 126 75" class="book">
-                  <rect stroke-width="3" stroke="#fff" rx="7.5" height="70" width="121" y="2.5" x="2.5"></rect>
+                  <rect stroke-width="3" stroke="#fff" rx="7.5 Braun" height="70" width="121" y="2.5" x="2.5"></rect>
                   <line stroke-width="3" stroke="#fff" y2="75" x2="63.5" x1="63.5"></line>
                   <path stroke-linecap="round" stroke-width="4" stroke="#fff" d="M25 20H50"></path>
                   <path stroke-linecap="round" stroke-width="4" stroke="#fff" d="M101 20H76"></path>
@@ -1304,12 +1286,10 @@
           </div>
         </a>
         <a href="brendiranje-2025.html" class="blog-post glow">
-          <video autoplay loop muted playsinline>
-            <source src="anim3.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-          <h3>Brendiranje u 2025</h3>
-          <p>Kako ostati ispred konkurencije sa hrabrim dizajnom.</p>
+          <img src="partner.png" alt="Brendiranje u 2025">
+          <h3>Velike vijesti!</h3>
+          <br>
+          <p>Partnerstvo između naše agencije Eminetic i Općine Breza!</p>
           <div class="button-wrapper">
             <button class="readmore-btn">
               <span class="book-wrapper">
@@ -1332,11 +1312,9 @@
           </div>
         </a>
         <a href="ui-ux-savjeti.html" class="blog-post glow">
-          <video autoplay loop muted playsinline>
-            <source src="anim2.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
+          <img src="ui-ux.png" alt="Savjeti za UI/UX">
           <h3>Savjeti za UI/UX</h3>
+          <br>
           <p>Kako dizajnirati intuitivna korisnička iskustva.</p>
           <div class="button-wrapper">
             <button class="readmore-btn">
@@ -1360,11 +1338,9 @@
           </div>
         </a>
         <a href="moc-animacija.html" class="blog-post glow">
-          <video autoplay loop muted playsinline>
-            <source src="anim4.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
+          <img src="animate.png" alt="Moć Animacija">
           <h3>Moć Animacija</h3>
+          <br>
           <p>Kako motion grafike povećavaju angažman.</p>
           <div class="button-wrapper">
             <button class="readmore-btn">
@@ -1391,8 +1367,6 @@
     </div>
   </section>
 
-
-  
   <!-- Contact -->
   <section class="contact" id="kontakt">
     <div class="parallax-bg"></div>
