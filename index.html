@@ -1,0 +1,1845 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-65ZVJRBRXM"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-65ZVJRBRXM');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eminetic - Kreativni Dizajn Budućnosti</title>
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="icon" href="logoologo-removebg-preview.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.cdnfonts.com/css/bastliga-one" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Futura:wght@400;700&family=Helvetica+Neue:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      background: #0A0F2D;
+      color: #ffffff;
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+      font-size: calc(12px + 0.5vw);
+    }
+
+    h1, h2, h3 {
+      font-family: 'Orbitron', sans-serif;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 7vw, 4rem);
+    }
+
+    h2 {
+      font-size: clamp(1.5rem, 4vw, 2.5rem);
+    }
+
+    h3 {
+      font-size: clamp(1rem, 2.5vw, 1.5rem);
+    }
+
+    .glow {
+      transition: all 0.3s ease;
+    }
+
+    .glow:hover {
+      text-shadow: 0 0 10px #00DDEB;
+      box-shadow: 0 0 20px #00DDEB;
+    }
+
+    section {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: clamp(1rem, 5vw, 2rem);
+    }
+
+    .parallax-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      opacity: 0.5;
+      background-size: cover;
+      background-attachment: fixed;
+    }
+
+    /* Navigation */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(10, 15, 45, 0.8);
+      backdrop-filter: blur(10px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: clamp(0.5rem, 1vw, 0.8rem);
+      z-index: 1000;
+      opacity: 0;
+      transform: translateY(-100%);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    .navbar.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .logo-img {
+      height: clamp(25px, 4vw, 30px);
+      transition: transform 0.3s ease;
+    }
+
+    .logo-img:hover {
+      transform: scale(1.1);
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: clamp(0.5rem, 1vw, 1rem);
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-right: clamp(0.5rem, 1vw, 1rem);
+    }
+
+    .nav-links li a {
+      color: #ffffff;
+      text-decoration: none;
+      font-size: clamp(0.7rem, 1.2vw, 0.8rem);
+      transition: color 0.3s ease;
+    }
+
+    .nav-links li a:hover {
+      color: #00DDEB;
+      text-shadow: 0 0 10px #00DDEB;
+    }
+
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 25px;
+      height: 16px;
+      cursor: pointer;
+      margin-right: clamp(0.5rem, 1vw, 1rem);
+    }
+
+    .menu-toggle span {
+      width: 100%;
+      height: 2px;
+      background: #ffffff;
+      transition: all 0.3s ease;
+    }
+
+    .menu-toggle.active span:nth-child(1) {
+      transform: rotate(45deg) translate(4px, 4px);
+    }
+
+    .menu-toggle.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .menu-toggle.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(6px, -6px);
+    }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(180deg, #0A0F2D, #000000);
+    }
+
+    .hero canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+    }
+
+    .hero-content p {
+      font-size: clamp(1rem, 2.5vw, 1.8rem);
+      margin-bottom: clamp(1rem, 3vw, 2rem);
+    }
+
+    .hero-content button {
+      padding: clamp(0.8rem, 2vw, 1rem) clamp(1.5rem, 3vw, 2rem);
+      border: none;
+      background: linear-gradient(to right, #00DDEB, #FF00E6);
+      color: #ffffff;
+      font-size: clamp(0.9rem, 1.8vw, 1rem);
+      border-radius: 2rem;
+      cursor: pointer;
+    }
+
+    /* Services */
+    .services {
+      background: linear-gradient(180deg, #00ADB5, #0A0F2D);
+    }
+
+    .section-content {
+      max-width: 1200px;
+      width: 90%;
+      margin: 0 auto;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      flex-grow: 1;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(clamp(200px, 30vw, 250px), 1fr));
+      gap: clamp(1rem, 3vw, 2rem);
+      width: 100%;
+    }
+
+    .service-card {
+      background: rgba(10, 15, 45, 0.7);
+      padding: clamp(1rem, 3vw, 2rem);
+      border-radius: 1rem;
+      transition: transform 0.3s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-10px) rotateX(10deg);
+      box-shadow: 0 0 20px #00DDEB;
+    }
+
+    .services canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+    }
+
+    /* Portfolio */
+    .portfolio {
+      background: linear-gradient(180deg, #0A0F2D, #000000);
+    }
+
+    .portfolio-slider {
+      max-width: 1200px;
+      width: 90%;
+      margin: 0 auto;
+    }
+
+    .swiper-slide {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .swiper-slide img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 1rem;
+      transition: transform 0.3s ease;
+    }
+
+    .swiper-slide img:hover {
+      box-shadow: 0 0 20px #00DDEB;
+    }
+
+    .swiper-pagination-bullet {
+      background: #00DDEB;
+    }
+
+    /* About */
+    .about {
+      background: linear-gradient(180deg, #00ADB5, #0A0F2D);
+    }
+
+    .about-content {
+      max-width: 1200px;
+      width: 90%;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+      text-align: center;
+    }
+
+    .about-img {
+      width: clamp(100px, 15vw, 150px);
+      height: clamp(100px, 15vw, 150px);
+      border-radius: 50%;
+      object-fit: contain;
+      margin: 0 auto 1rem;
+    }
+
+    .about-text {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .about-text p {
+      font-size: clamp(0.8rem, 1.8vw, 1rem);
+      margin-bottom: 1rem;
+      background: rgba(10, 15, 45, 0.7);
+      color: white;
+      padding: 0.5rem;
+      border-radius: 1rem;
+    }
+
+    .about canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+    }
+
+    /* Video Showcase */
+    .video-showcase {
+      position: relative;
+      background: linear-gradient(180deg, #0A0F2D, #000000);
+    }
+
+    .fullscreen-video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.7;
+    }
+
+    /* Case Studies */
+    .case-studies {
+      background: linear-gradient(180deg, #0A0F2D, #000000);
+    }
+
+    .case-studies-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: clamp(1rem, 3vw, 2rem);
+      max-width: 1200px;
+      width: 90%;
+      margin: 0 auto;
+    }
+
+    .case-study-card {
+      background: rgba(10, 15, 45, 0.7);
+      padding: clamp(1rem, 2vw, 1.5rem);
+      border-radius: 1rem;
+      transition: transform 0.3s ease;
+      flex: 1;
+      min-width: clamp(250px, 40vw, 300px);
+    }
+
+    .case-study-card:hover {
+      transform: rotateY(10deg);
+      box-shadow: 0 0 20px #00DDEB;
+    }
+
+    .case-study-card img,
+    .case-study-video {
+      width: 100%;
+      height: clamp(150px, 25vw, 200px);
+      object-fit: cover;
+      border-radius: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .case-studies canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+    }
+
+    /* Reviews */
+    .reviews {
+      background: linear-gradient(180deg, #00ADB5, #0A0F2D);
+    }
+
+    .reviews-slider {
+      max-width: 800px;
+      width: 90%;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .reviews .swiper-slide {
+      background: rgba(10, 15, 45, 0.7);
+      padding: clamp(1rem, 3vw, 2rem);
+      border-radius: 1rem;
+      text-align: center;
+    }
+
+    .reviews .swiper-slide p {
+      font-size: clamp(0.8rem, 1.8vw, 1rem);
+      margin-bottom: 1rem;
+    }
+
+    .reviews .swiper-slide span {
+      color: #00DDEB;
+      font-size: clamp(0.7rem, 1.3vw, 0.9rem);
+    }
+
+    .reviews canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+    }
+
+    /* Blog */
+    .blog {
+      background: linear-gradient(180deg, #0A0F2D, #000000);
+    }
+
+    .blog .section-content h2,
+    .blog .section-content .blog-grid {
+      transform: translateY(-700px);
+    }
+
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(clamp(150px, 25vw, 300px), 1fr));
+      gap: clamp(1rem, 3vw, 2rem);
+      max-width: 1200px;
+      width: 90%;
+      margin: 0 auto;
+    }
+
+    .blog-post {
+      position: relative;
+      background: rgba(10, 15, 45, 0.7);
+      padding: 1rem;
+      border-radius: 1rem;
+      text-decoration: none;
+      color: #ffffff;
+      transition: transform 0.3s ease;
+    }
+
+    .blog-post:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 0 20px #00DDEB;
+    }
+
+    .blog-post img {
+      width: 100%;
+      height: clamp(120px, 20vw, 150px);
+      object-fit: contain;
+      border-radius: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .blog-post h3 {
+      font-size: clamp(0.9rem, 2.3vw, 1.1rem);
+    }
+
+    .blog-post p {
+      font-size: clamp(0.7rem, 1.8vw, 0.9rem);
+    }
+
+    .readmore-btn {
+      display: inline-flex;
+      align-items: center;
+      padding: clamp(0.4rem, 1vw, 0.5rem) clamp(0.8rem, 2vw, 1rem);
+      background: linear-gradient(to right, #00DDEB, #FF00E6);
+      border: none;
+      border-radius: 0.5rem;
+      color: #ffffff;
+      font-size: clamp(0.7rem, 1.3vw, 0.9rem);
+      cursor: pointer;
+      margin-top: 1rem;
+    }
+
+    .book-wrapper {
+      position: relative;
+      width: clamp(20px, 4vw, 20px);
+      height: clamp(15px, 3vw, 20px);
+      margin-right: 0.5rem;
+    }
+
+    .book, .book-page {
+      width: 100%;
+      margin-left: -10px;
+      height: 100%;
+      position: absolute;
+    }
+
+    .readmore-btn:hover .book-page {
+      transform: translateX(10px);
+    }
+
+    /* Contact */
+    .contact {
+      background: linear-gradient(180deg, #00ADB5, #0A0F2D);
+    }
+
+    .contact-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: clamp(1rem, 3vw, 2rem);
+      max-width: 1200px;
+      width: 90%;
+      margin: 0 auto;
+    }
+
+    .contact-form {
+      flex: 1;
+      min-width: clamp(250px, 40vw, 400px);
+      background: rgba(10, 15, 45, 0.7);
+      padding: clamp(1rem, 3vw, 2rem);
+      border-radius: 1rem;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: clamp(0.8rem, 2vw, 1rem);
+      background: transparent;
+      border: 1px solid #00DDEB;
+      border-radius: 0.5rem;
+      color: #ffffff;
+      font-size: clamp(0.8rem, 1.8vw, 0.9rem);
+      margin-bottom: 1rem;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      outline: none;
+      border-color: #FF00E6;
+    }
+
+    .contact-form button {
+      width: 100%;
+      padding: clamp(0.8rem, 2vw, 1rem);
+      background: linear-gradient(to right, #00DDEB, #FF00E6);
+      border: none;
+      border-radius: 0.5rem;
+      color: #ffffff;
+      font-size: clamp(0.9rem, 1.8vw, 1rem);
+      cursor: pointer;
+    }
+
+    .contact-info {
+      flex: 1;
+      min-width: clamp(250px, 40vw, 400px);
+      padding: clamp(1rem, 3vw, 2rem);
+    }
+
+    .contact-info p {
+      font-size: clamp(0.8rem, 1.8vw, 1rem);
+      margin-bottom: 1rem;
+    }
+
+    .ul-983 {
+      list-style: none;
+      display: flex;
+      gap: clamp(0.5rem, 2vw, 1rem);
+    }
+
+    .icon-content-983 {
+      position: relative;
+    }
+
+    .icon-content-983 a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: clamp(30px, 5vw, 40px);
+      height: clamp(30px, 5vw, 40px);
+      background: rgba(0, 173, 181, 0.2);
+      border-radius: 50%;
+      transition: background 0.3s ease;
+    }
+
+    .icon-content-983 a:hover {
+      background: #00DDEB;
+    }
+
+    .tooltip-983 {
+      position: absolute;
+      top: -30px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #0A0F2D;
+      color: #ffffff;
+      padding: 0.3rem 0.6rem;
+      border-radius: 0.3rem;
+      font-size: clamp(0.6rem, 1.3vw, 0.7rem);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .icon-content-983:hover .tooltip-983 {
+      opacity: 1;
+    }
+
+    .contact canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+    }
+
+    /* Footer */
+    footer {
+      background: linear-gradient(180deg, #0A0F2D, #000000);
+      padding: clamp(1rem, 3vw, 2rem);
+      text-align: center;
+      position: relative;
+      z-index: 1;
+      min-height: 100px;
+    }
+
+    .footer-logo {
+      font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+      font-family: 'Orbitron', sans-serif;
+      margin-bottom: 1rem;
+    }
+
+    .footer-links {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: clamp(1rem, 3vw, 2rem);
+      margin-bottom: 1rem;
+    }
+
+    .footer-links li a {
+      color: #ffffff;
+      text-decoration: none;
+      font-size: clamp(0.8rem, 1.8vw, 1rem);
+    }
+
+    .footer-links li a:hover {
+      color: #00DDEB;
+    }
+
+    .eminetic {
+      font-size: clamp(0.7rem, 1.3vw, 0.8rem);
+      color: #00DDEB;
+    }
+
+    /* Scroll to Top */
+    .scroll-top {
+      position: fixed;
+      bottom: clamp(1rem, 3vw, 2rem);
+      right: clamp(1rem, 3vw, 2rem);
+      background: #00DDEB;
+      width: clamp(40px, 6vw, 50px);
+      height: clamp(40px, 6vw, 50px);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .scroll-top.active {
+      opacity: 1;
+    }
+
+    .scroll-top svg {
+      width: clamp(20px, 4vw, 24px);
+      height: clamp(20px, 4vw, 24px);
+      fill: #0A0F2D;
+    }
+
+    .scroll-top:hover {
+      animation: pulse 1s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+      100% { transform: scale(1); }
+    }
+
+    /* Responsive Design */
+    @media (min-width: 1024px) {
+      .blog-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      .swiper-slide img {
+        height: 400px;
+      }
+
+      .nav-links {
+        gap: clamp(1rem, 1.5vw, 1.5rem);
+      }
+    }
+
+    @media (min-width: 768px) and (max-width: 1023px) {
+      .blog-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .swiper-slide img {
+        height: 300px;
+      }
+
+      .nav-links {
+        gap: clamp(0.8rem, 1.2vw, 1rem);
+        flex-wrap: wrap;
+      }
+
+      .nav-links li a {
+        font-size: clamp(0.6rem, 1vw, 0.7rem);
+      }
+    }
+
+    @media (max-width: 767px) {
+      .menu-toggle {
+        display: flex;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: rgba(10, 15, 45, 0.9);
+        flex-direction: column;
+        align-items: center;
+        padding: clamp(1rem, 3vw, 2rem);
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .nav-links li {
+        margin: 0.5rem 0;
+      }
+
+      .nav-links li a {
+        font-size: clamp(1rem, 2.5vw, 1.2rem);
+      }
+
+      .navbar {
+        justify-content: space-between;
+        padding: clamp(0.6rem, 1.5vw, 0.8rem);
+      }
+
+      .hero-content h1 {
+        font-size: clamp(1.8rem, 5vw, 2.5rem);
+      }
+
+      .hero-content p {
+        font-size: clamp(0.9rem, 2.5vw, 1.2rem);
+      }
+
+      .hero-content button {
+        padding: 1rem 1.5rem;
+        font-size: clamp(1rem, 1.8vw, 0.9rem);
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .blog-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-container {
+        flex-direction: column;
+      }
+
+      canvas {
+        width: 100% !important;
+        height: auto !important;
+      }
+
+      .swiper-slide img {
+        height: 200px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      section {
+        padding: 1rem;
+      }
+
+      .hero-content h1 {
+        font-size: clamp(3.5rem, 4vw, 2rem);
+      }
+
+      .hero-content p {
+        font-size: clamp(1.2rem, 2vw, 1rem);
+      }
+
+      .service-card, .blog-post, .case-study-card {
+        padding: 1rem;
+      }
+
+      .contact-form input, .contact-form textarea {
+        padding: 0.8rem;
+        font-size: 0.8rem;
+      }
+
+      .scroll-top {
+        width: 40px;
+        height: 40px;
+      }
+
+      .nav-links li a {
+        font-size: clamp(0.9rem, 2vw, 1rem);
+      }
+    }
+
+    @media (min-width: 1920px) {
+      .section-content {
+        max-width: 1400px;
+      }
+
+      .hero-content h1 {
+        font-size: 5rem;
+      }
+
+      .hero-content p {
+        font-size: 2rem;
+      }
+
+      .services-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      }
+
+      .swiper-slide img {
+        height: 500px;
+      }
+
+      .nav-links {
+        gap: clamp(1.5rem, 2vw, 2rem);
+      }
+    }
+
+    .steampunkQuantumMatrix {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 40px;
+      position: relative;
+    }
+
+    .aetherHeaderForge {
+      text-align: center;
+      padding: 50px 0;
+      background: #0A0F2D;
+      border-bottom: 3px solid #0A0F2D;
+      margin-bottom: 120px;
+      box-shadow: 0 0 20px #0A0F2D;
+    }
+
+    .aetherHeaderForge h1 {
+      font-size: 2.5rem;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 5px;
+      animation: aetherSteamPulse 3s ease-in-out infinite;
+    }
+
+    .clockworkServiceLattice {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 40px;
+      padding: 20px 0;
+      perspective: 1000px;
+    }
+
+    .mechanicalCogModule {
+      background: #00DDEB;
+      border: 4px solid #4a3726;
+      border-radius: 15px;
+      width: 100%;
+      max-width: 700px;
+      padding: 25px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      transition: transform 0.6s ease, box-shadow 0.6s ease;
+      position: relative;
+      transform-style: preserve-3d;
+      box-shadow: 0 0 20px rgba(10, 15, 45, 0.7);
+      cursor: pointer;
+    }
+
+    .mechanicalCogModule:hover {
+      transform: translateZ(60px) rotateX(5deg);
+      box-shadow: 0 0 40px rgba(10, 15, 45, 0.7);
+    }
+
+    .mechanicalCogModule::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 15px;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+
+    .mechanicalCogModule:hover::before {
+      opacity: 1;
+    }
+
+    .brassGlyphCog {
+      width: 70px;
+      height: 70px;
+      animation: cogKineticSpin 6s linear infinite;
+    }
+
+    .steamTextConduit {
+      flex: 1;
+    }
+
+    .steamTextConduit h3 {
+      font-size: 1.8rem;
+      color: black;
+      margin-bottom: 8px;
+    }
+
+    .steamTextConduit p {
+      font-size: 1rem;
+      color: black;
+    }
+
+    .aetherLeverTrigger {
+      background: #0A0F2D;
+      border: 2px solid #fff;
+      padding: 10px 20px;
+      border-radius: 10px;
+      color: #fff;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      text-shadow: 0 0 5px #0A0F2D;
+    }
+
+    .aetherLeverTrigger:hover {
+      transform: scale(1.1) translateZ(10px);
+      box-shadow: 0 0 20px #0A0F2D;
+    }
+
+    @keyframes aetherSteamPulse {
+      0%, 100% { text-shadow: 0 0 10px black, 0 0 20px #fff; }
+      50% { text-shadow: 0 0 20px #fff, 0 0 40px black; }
+    }
+
+    @keyframes cogKineticSpin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    @media (max-width: 768px) {
+      .aetherHeaderForge h1 {
+        font-size: 2.3rem;
+      }
+
+      .steampunkQuantumMatrix {
+        padding: 20px;
+      }
+
+      .mechanicalCogModule {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+        max-width: 60%;
+        top: -50px;
+      }
+
+      .brassGlyphCog {
+        margin-bottom: 15px;
+      }
+
+      .aetherLeverTrigger {
+        margin-top: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="parallax-item" data-speed="0.2">
+      <a href="#pocetna" class="logo">
+        <img src="logosad.png" alt="Eminetic Logo" class="logo-img">
+      </a>
+    </div>
+    <div class="menu-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#pocetna" class="parallax-item" data-speed="0.3">Početna</a></li>
+      <li><a href="#usluge" class="parallax-item" data-speed="0.3">Usluge</a></li>
+      <li><a href="#portfolio" class="parallax-item" data-speed="0.3">Portfolio</a></li>
+      <li><a href="#o-nama" class="parallax-item" data-speed="0.3">O Nama</a></li>
+      <li><a href="#studije-slucaja" class="parallax-item" data-speed="0.3">Studije</a></li>
+      <li><a href="#recenzije" class="parallax-item" data-speed="0.3">Recenzije</a></li>
+      <li><a href="#blog" class="parallax-item" data-speed="0.3">Blog</a></li>
+      <li><a href="#kontakt" class="parallax-item" data-speed="0.3">Kontakt</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero" id="pocetna">
+    <div class="parallax-bg"></div>
+    <canvas id="hero-canvas"></canvas>
+    <div class="hero-content">
+      <h1 class="glow">Eminetic</h1>
+      <p>Crafting the Future of Web Design</p>
+      <a href="#portfolio"><button class="glow">Explore Our Work</button></a>
+    </div>
+  </section>
+
+  <div class="steampunkQuantumMatrix">
+    <header class="aetherHeaderForge">
+      <h1>naše usluge</h1>
+    </header>
+    <div class="clockworkServiceLattice">
+      <div class="mechanicalCogModule">
+        <img class="brassGlyphCog" src="https://img.icons8.com/ios-filled/100/web-design.png" alt="Ikona Web Dizajna">
+        <div class="steamTextConduit">
+          <h3>Web Dizajn</h3>
+          <p>Profesionalne web stranice izrađene s preciznošću i vizuelnim identitetom prilagođenim vašem brendu.</p>
+        </div>
+      </div>
+      <div class="mechanicalCogModule">
+        <img class="brassGlyphCog" src="icons8-graphic-design-64.png" alt="Ikona Grafičkog Dizajna">
+        <div class="steamTextConduit">
+          <h3>Grafički Dizajn</h3>
+          <p>Visokokvalitetna vizualna rješenja za promotivne materijale, društvene mreže i vizuelni identitet.</p>
+        </div>
+      </div>
+      <div class="mechanicalCogModule">
+        <img class="brassGlyphCog" src="https://img.icons8.com/ios/100/domain.png" alt="Ikona Kupovine Domene">
+        <div class="steamTextConduit">
+          <h3>Kupovina Domene</h3>
+          <p>Registracija profesionalne domene koja osigurava vašu online prisutnost i autentičnost brenda.</p>
+        </div>
+      </div>
+      <div class="mechanicalCogModule">
+        <img class="brassGlyphCog" src="icons8-seo-50.png" alt="Ikona SEO Optimizacije">
+        <div class="steamTextConduit">
+          <h3>SEO Optimizacija</h3>
+          <p>Unapređenje pozicije vaše stranice na pretraživačima kroz stratešku optimizaciju sadržaja i strukture.</p>
+        </div>
+      </div>
+      <div class="mechanicalCogModule">
+        <img class="brassGlyphCog" src="icons8-responsive-64.png" alt="Ikona Responsivnog Dizajna">
+        <div class="steamTextConduit">
+          <h3>Responsivni Dizajn</h3>
+          <p>Web stranice koje se besprijekorno prilagođavaju svim uređajima – od mobilnih telefona do desktop računara.</p>
+        </div>
+      </div>
+      <div class="mechanicalCogModule">
+        <img class="brassGlyphCog" src="icons8-management-50.png" alt="Ikona Upravljanja Web Stranicom">
+        <div class="steamTextConduit">
+          <h3>Vođenje Web Stranice</h3>
+          <p>Kontinuirano tehničko održavanje, ažuriranje sadržaja i sigurnosna podrška vaše web stranice.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Services -->
+  <section class="services" id="usluge">
+    <div class="parallax-bg"></div>
+    <canvas class="services-canvas"></canvas>
+    <div class="section-content">
+      <h2 class="glow">Naši Paketi</h2>
+      <div class="services-grid">
+        <div class="service-card glow">
+          <h3>🎯 Osnovni Paket</h3>
+          <p>✔️ Jedna stranica (Portfolio)<br>
+             ✔️ Moderan dizajn<br>
+             ✔️ Mobile-friendly</p>
+             ✔️ Podrška 30 dana</p>
+             ✔️ Kupovina domene (.com/.ba)<br>
+        </div>
+        <div class="service-card glow">
+          <h3>💡 Pro Paket</h3>
+          <p>✔️ Višestrane stranice<br>
+             ✔️ Kontakt forma (Email integracija)<br>
+             ✔️ Osnovna SEO optimizacija<br>
+             ✔️ Brže učitavanje stranice<br>
+             ✔️ Brendiranje</p>
+        </div>
+        <div class="service-card glow">
+          <h3>🔥 Premium Paket</h3>
+          <p>✔️ Sve iz Pro paketa<br>
+             ✔️ Backend funkcionalnosti (admin panel)<br>
+             ✔️ CMS (WordPress, custom, itd.)<br>
+             ✔️ Vođenje i održavanje 6 mjeseci</p>
+        </div>
+        <div class="service-card glow">
+          <h3>👑 Ultimate Paket</h3>
+          <p>✔️ 3D elementi i interaktivne animacije<br>
+             ✔️ Potpuna SEO strategija<br>
+             ✔️ Google Analytics & Facebook Pixel<br>
+             ✔️ Social media integracija<br>
+             ✔️ Digitalni marketing paket</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio -->
+  <section class="portfolio" id="portfolio">
+    <div class="parallax-bg"></div>
+    <h2 class="glow">Projekti</h2>
+    <div class="swiper-container portfolio-slider">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="logo20.jpg" alt="Projekat 1"></div>
+        <div class="swiper-slide"><img src="logo21.jpg" alt="Projekat 2"></div>
+        <div class="swiper-slide"><img src="logo4.png" alt="Projekat 3"></div>
+        <div class="swiper-slide"><img src="baner1.png" alt="Projekat 4"></div>
+        <div class="swiper-slide"><img src="baner22.jpg" alt="Projekat 5"></div>
+        <div class="swiper-slide"><img src="baner11.png" alt="Projekat 6"></div>
+        <div class="swiper-slide"><img src="baner20.jpg" alt="Projekat 8"></div>
+        <div class="swiper-slide"><img src="baner21.jpg" alt="Projekat 9"></div>
+        <div class="swiper-slide"><img src="logo7.png" alt="Projekat 10"></div>
+        <div class="swiper-slide"><img src="business-card-mockup-In-binder-clip (1).png" alt="Projekat 12"></div>
+        <div class="swiper-slide"><img src="741.png" alt="Projekat 1"></div>
+        <div class="swiper-slide"><img src="852.png" alt="Projekat 2"></div>
+        <div class="swiper-slide"><img src="963.png" alt="Projekat 3"></div>
+        <div class="swiper-slide"><img src="456654.png" alt="Projekat 4"></div>
+        <div class="swiper-slide"><img src="8798.png" alt="Projekat 5"></div>
+        <div class="swiper-slide"><img src="logo.png" alt="Projekat 6"></div>
+        <div class="swiper-slide"><img src="logojpg1.jpg" alt="Projekat 8"></div>
+        <div class="swiper-slide"><img src="mediamodifier_image (1).png" alt="Projekat 9"></div>
+        <div class="swiper-slide"><img src="mediamodifier_image (2).png" alt="Projekat 10"></div>
+        <div class="swiper-slide"><img src="mediamodifier_image (5).png" alt="Projekat 11"></div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="about" id="o-nama">
+    <div class="parallax-bg"></div>
+    <canvas class="about-canvas"></canvas>
+    <div class="section-content">
+      <h2 class="glow">O Emineticu</h2>
+      <div class="about-content">
+        <img src="logo24-Photoroom3.png" alt="Vaša Fotografija" class="about-img">
+        <div class="about-text">
+          <p>Eminetic je nastao iz strasti jednog freelancera prema dizajnu i inovacijama. Naša misija je stvaranje futurističkih rješenja koja spajaju umjetnost i tehnologiju, pružajući klijentima jedinstvene i nezaboravne vizuale.</p>
+          <p>Sa fokusom na detalje i kreativnost, svaki projekat je prilagođen da vaš brend zablista u digitalnom svijetu. Od web dizajna do animacija, nudimo sve što je potrebno za uspjeh u modernom dobu.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Case Studies -->
+  <section class="case-studies" id="studije-slucaja">
+    <div class="parallax-bg"></div>
+    <canvas class="case-studies-canvas"></canvas>
+    <div class="section-content">
+      <h2 class="glow">Studije</h2>
+      <div class="case-studies-grid">
+        <div class="case-study-card glow">
+          <img src="baner4.png" alt="Studija 1">
+          <h3>Tehnološki Startup</h3>
+          <p>Redizajn web stranice sa animacijama povećao je angažman korisnika za 40%.</p>
+        </div>
+        <div class="case-study-card glow">
+          <img src="baner1.png" alt="Studija 2">
+          <h3>Lifestyle Brend</h3>
+          <p>Kompletno brendiranje dovelo je do prepoznatljivosti na tržištu.</p>
+        </div>
+        <div class="case-study-card glow">
+          <video autoplay loop muted playsinline class="case-study-video">
+            <source src="macbook-air-m2-top.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <h3>Mobilna Aplikacija</h3>
+          <p>UI/UX dizajn poboljšao je korisničko iskustvo i ocjene aplikacije.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reviews -->
+  <section class="reviews" id="recenzije">
+    <div class="parallax-bg"></div>
+    <canvas class="reviews-canvas"></canvas>
+    <div class="section-content">
+      <h2 class="glow">Šta kažu klijenti?</h2>
+      <div class="swiper-container reviews-slider">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <p>"Kad sam vidio logo koji su mi napravili, odmah sam znao da je to to! Baš ono što sam zamišljao, a ispalo je još bolje. Gosti stalno komentarišu kako restoran sada izgleda modernije. Svaka čast!"</p>
+            <span>Amar Mehić – Restoran "Sevdah Sofra"</span>
+          </div>
+          <div class="swiper-slide">
+            <p>"Nisam ni znala koliko mi dobar dizajn treba dok nisam vidjela šta su mi uradili! Sad mi Instagram profil izgleda top, a i više ljudi dolazi u butik jer ih privuče vizuelni identitet. Prezadovoljna sam!"</p>
+            <span>Lejla Hadžić – Butik "Modni Kutak"</span>
+          </div>
+          <div class="swiper-slide">
+            <p>"Mislio sam da će izrada web stranice trajati vječnost, ali ovi momci su sve završili brzo i profi. Stranica radi bez greške, izgleda moderno i konačno ne moram da se stidim kad klijentima šaljem link. Hvala vam!"</p>
+            <span>Haris Mujanović – Firma "IT Solutions Sarajevo"</span>
+          </div>
+          <div class="swiper-slide">
+            <p>"Samo sam rekla: hoću nešto elegantno i privlačno – i pogodili su iz prve! Sad kad vidim naš novi logo i brošure, ne mogu da vjerujem koliko bolje izgleda u odnosu na prije. Prava stvar!"</p>
+            <span>Amina Džafić – Hotel "Plava Laguna"</span>
+          </div>
+          <div class="swiper-slide">
+            <p>"Trebalo mi je nešto jednostavno, ali upečatljivo za moj foto studio. Oni su mi napravili logo i vizitke koje izgledaju baš profesionalno, ali opet sa dozom kreativnosti. Stvarno su pogodili moj stil!"</p>
+            <span>Adnan Selimović – Fotograf "Fokus Art"</span>
+          </div>
+          <div class="swiper-slide">
+            <p>"Nisam imao pojma šta tačno hoću, samo sam rekao da treba nešto ozbiljno i profesionalno. Ekipa je skontala sve iz par rečenica i isporučila dizajn koji izgleda vrhunski! Svaka preporuka."</p>
+            <span>Tarik Bešlagić – Firma "EkoGradnja"</span>
+          </div>
+          <div class="swiper-slide">
+            <p>"Vizitke, logo– sve su mi sredili! Klijentice stalno pitaju ko mi je radio brendiranje jer im se baš sviđa kako izgleda. Preporučujem od srca!"</p>
+            <span>Selma Husić – Salon "Lotos Beauty"</span>
+          </div>
+          <div class="swiper-slide">
+            <p>"Brate, logo i dizajn koji su mi uradili su top! Sad sve izgleda skockano i profi, a mušterije stalno hvale novi izgled."</p>
+            <span>Nedim Krvavac – Barbershop "Gentleman"</span>
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog -->
+  <section class="blog" id="blog">
+    <div class="parallax-bg"></div>
+    <canvas class="blog-canvas"></canvas>
+    <div class="section-content">
+      <div class="blog-grid">
+        <a href="sastanak-opcina.html" class="blog-post glow">
+          <img src="slika3.jpg" alt="Novo partnerstvo">
+          <h3>Dogovorena izrada nove web stranice za Općinu Breza</h3>
+          <br>
+          <p>Sastanak sa načelnikom rezultirao partnerstvom!</p>
+          <div class="button-wrapper">
+            <button class="readmore-btn">
+              <span class="book-wrapper">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="rgb(86, 69, 117)" viewBox="0 0 126 75" class="book">
+                  <rect stroke-width="3" stroke="#fff" rx="7.5 Braun" height="70" width="121" y="2.5" x="2.5"></rect>
+                  <line stroke-width="3" stroke="#fff" y2="75" x2="63.5" x1="63.5"></line>
+                  <path stroke-linecap="round" stroke-width="4" stroke="#fff" d="M25 20H50"></path>
+                  <path stroke-linecap="round" stroke-width="4" stroke="#fff" d="M101 20H76"></path>
+                  <path stroke-linecap="round" stroke-width="4" stroke="#fff" d="M16 30L50 30"></path>
+                  <path stroke-linecap="round" stroke-width="4" stroke="#fff" d="M110 30L76 30"></path>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 65 75" class="book-page">
+                  <path stroke-linecap="round" stroke-width="4" stroke="#fff" d="M40 20H15"></path>
+                  <path stroke-linecap="round" stroke-width="4" stroke="#fff" d="M49 30L15 30"></path>
+                  <path stroke-width="3" stroke="#fff" d="M2.5 2.5H55C59.1421 2.5 62.5 5.85786 62.5 10V65C62.5 69.1421 59.1421 72.5 55 72.5H2.5V2.5Z"></path>
+                </svg>
+              </span>
+              <span class="text">Pročitaj više</span>
+            </button>
+          </div>
+        </a>
+        <a href="partnerstvo.html" class="blog-post glow">
+          <img src="partner.png" alt="Brendiranje u 2025">
+          <h3>Velike vijesti!</h3>
+          <br>
+          <p>Partnerstvo između naše agencije Eminetic i Općine Breza!</p>
+          <div class="button-wrapper">
+            <button class="readmore-btn">
+              <span class="book-wrapper">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="rgb(86, 69, 117)" viewBox="0 0 126 75" class="book">
+                  <rect stroke-width="3" stroke="#fff" rx="7.5" height="70" width="121" y="2.5" x="2.5"></rect>
+                  <line stroke-width="3" stroke="#fff" y2="75" x2="63.5" x1="63.5"></line>
+                  <path stroke-linecap="round" stroke-width="4" stroke="#fff" d="M25 20H50"></path>
+                  <path stroke-linecap="round" stroke-width="4" stroke="#fff" d="M101 20H76"></path>
+                  <path stroke-linecap="round" stroke-width="4" stroke="#fff" d="M16 30L50 30"></path>
+                  <path stroke-linecap="round" stroke-width="4" stroke="#fff" d="M110 30L76 30"></path>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 65 75" class="book-page">
+                  <path stroke-linecap="round" stroke-width="4" stroke="#fff" d="M40 20H15"></path>
+                  <path stroke-linecap="round" stroke-width="4" stroke="#fff" d="M49 30L15 30"></path>
+                  <path stroke-width="3" stroke="#fff" d="M2.5 2.5H55C59.1421 2.5 62.5 5.85786 62.5 10V65C62.5 69.1421 59.1421 72.5 55 72.5H2.5V2.5Z"></path>
+                </svg>
+              </span>
+              <span class="text">Pročitaj više</span>
+            </button>
+          </div>
+        </a>
+        <a href="novinske.html" class="blog-post glow">
+          <img src="aa1.jpg" alt="Savjeti za UI/UX">
+          <h3>Eminetic medijski popraćen širom BiH</h3>
+          <br>
+          <p>20 novinskih agencija objavilo vijesti o našoj kreativnoj agenciji</p>
+          <div class="button-wrapper">
+            <button class="readmore-btn">
+              <span class="book-wrapper">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="rgb(86, 69, 117)" viewBox="0 0 126 75" class="book">
+                  <rect stroke-width="3" stroke="#fff" rx="7.5" height="70" width="121" y="2.5" x="2.5"></rect>
+                  <line stroke-width="3" stroke="#fff" y2="75" x2="63.5" x1="63.5"></line>
+                  <path stroke-linecap="round" stroke-width="4" stroke="#fff" d="M25 20H50"></path>
+                  <path stroke-linecap="round" stroke-width="4" stroke="#fff" d="M101 20H76"></path>
+                  <path stroke-linecap="round" stroke-width="4" stroke="#fff" d="M16 30L50 30"></path>
+                  <path stroke-linecap="round" stroke-width="4" stroke="#fff" d="M110 30L76 30"></path>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 65 75" class="book-page">
+                  <path stroke-linecap="round" stroke-width="4" stroke="#fff" d="M40 20H15"></path>
+                  <path stroke-linecap="round" stroke-width="4" stroke="#fff" d="M49 30L15 30"></path>
+                  <path stroke-width="3" stroke="#fff" d="M2.5 2.5H55C59.1421 2.5 62.5 5.85786 62.5 10V65C62.5 69.1421 59.1421 72.5 55 72.5H2.5V2.5Z"></path>
+                </svg>
+              </span>
+              <span class="text">Pročitaj više</span>
+            </button>
+          </div>
+        </a>
+        <a href="gostovanje_novabh.html" class="blog-post glow">
+          <img src="novabh.png" alt="Moć Animacija">
+          <h3>Gostovanje na NOVA BH televiziji</h3>
+          <br>
+          <p>Emin Solak predstavio projekat Eminetic na Novoj BH.</p>
+          <div class="button-wrapper">
+            <button class="readmore-btn">
+              <span class="book-wrapper">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="rgb(86, 69, 117)" viewBox="0 0 126 75" class="book">
+                  <rect stroke-width="3" stroke="#fff" rx="7.5" height="70" width="121" y="2.5" x="2.5"></rect>
+                  <line stroke-width="3" stroke="#fff" y2="75" x2="63.5" x1="63.5"></line>
+                  <path stroke-linecap="round" stroke-width="4" stroke="#fff" d="M25 20H50"></path>
+                  <path stroke-linecap="round" stroke-width="4" stroke="#fff" d="M101 20H76"></path>
+                  <path stroke-linecap="round" stroke-width="4" stroke="#fff" d="M16 30L50 30"></path>
+                  <path stroke-linecap="round" stroke-width="4" stroke="#fff" d="M110 30L76 30"></path>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 65 75" class="book-page">
+                  <path stroke-linecap="round" stroke-width="4" stroke="#fff" d="M40 20H15"></path>
+                  <path stroke-linecap="round" stroke-width="4" stroke="#fff" d="M49 30L15 30"></path>
+                  <path stroke-width="3" stroke="#fff" d="M2.5 2.5H55C59.1421 2.5 62.5 5.85786 62.5 10V65C62.5 69.1421 59.1421 72.5 55 72.5H2.5V2.5Z"></path>
+                </svg>
+              </span>
+              <span class="text">Pročitaj više</span>
+            </button>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact" id="kontakt">
+    <div class="parallax-bg"></div>
+    <canvas class="contact-canvas"></canvas>
+    <div class="section-content">
+      <h2 class="glow">Kontaktirajte Nas</h2>
+      <div class="contact-container">
+        <form class="contact-form glow" action="https://formspree.io/f/mjkypgqr" method="POST">
+          <input type="text" name="name" placeholder="Vaše Ime" required>
+          <input type="email" name="email" placeholder="Vaš Email" required>
+          <input type="text" name="subject" placeholder="Naslov" required>
+          <textarea name="message" placeholder="Vaša Poruka" required></textarea>
+          <button type="submit">Pošalji Poruku</button>
+        </form>
+        <div class="contact-info">
+          <p>Email: contact@eminetik.com</p>
+          <p>Instagram: @eminettic</p>
+          <ul class="ul-983">
+            <li class="icon-content-983">
+              <a href="https://www.linkedin.com/in/emin-solak-a81218356/" aria-label="LinkedIn" data-social="linkedin">
+                <div class="filled-983"></div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 16 16">
+                  <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"/>
+                </svg>
+              </a>
+              <div class="tooltip-983">LinkedIn</div>
+            </li>
+            <li class="icon-content-983">
+              <a href="https://www.instagram.com/eminettic?igsh=MTRqMzl4b3VmMmN3dQ%3D%3D" aria-label="Instagram" data-social="instagram">
+                <div class="filled-983"></div>
+                <img src="icons8-instagram-30.svg" alt="Instagram">
+              </a>
+              <div class="tooltip-983">Instagram</div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="parallax-bg"></div>
+    <div class="section-content">
+      <div class="footer-logo glow">Eminetic</div>
+      <ul class="footer-links">
+        <li><a href="#pocetna">Početna</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#usluge">Usluge</a></li>
+        <li><a href="#kontakt">Kontakt</a></li>
+      </ul>
+      <p class="eminetic">© 2025 Eminetic. Sva prava zadržana.</p>
+    </div>
+  </footer>
+
+  <!-- Scroll to Top -->
+  <div class="scroll-top">
+    <svg viewBox="0 0 24 24">
+      <path d="M12 2L4 10h6v12h4V10h6L12 2z" />
+    </svg>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script>
+    // Navigation
+    const navbar = document.querySelector('.navbar');
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    menuToggle.addEventListener('click', () => {
+      menuToggle.classList.toggle('active');
+      navLinks.classList.toggle('active');
+    });
+
+    // Close menu when clicking a link
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        menuToggle.classList.remove('active');
+        navLinks.classList.remove('active');
+      });
+    });
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 100) {
+        navbar.classList.add('active');
+      } else {
+        navbar.classList.remove('active');
+      }
+    });
+
+    // Parallax Effect
+    document.querySelectorAll('.parallax-item').forEach(item => {
+      const speed = item.dataset.speed;
+      window.addEventListener('scroll', () => {
+        const yPos = -(window.scrollY * speed);
+        item.style.transform = `translateY(${yPos}px)`;
+      });
+    });
+
+    // Hero Section - 3D Particles
+    const heroCanvas = document.getElementById('hero-canvas');
+    const heroScene = new THREE.Scene();
+    const heroCamera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    const heroRenderer = new THREE.WebGLRenderer({ canvas: heroCanvas, alpha: true });
+    heroRenderer.setSize(window.innerWidth, window.innerHeight);
+
+    const particleCount = 500;
+    const positions = new Float32Array(particleCount * 3);
+    for (let i = 0; i < particleCount * 3; i++) {
+      positions[i] = (Math.random() - 0.5) * 100;
+    }
+    const heroGeometry = new THREE.BufferGeometry();
+    heroGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+    const heroMaterial = new THREE.PointsMaterial({
+      color: 0x00DDEB,
+      size: 0.5,
+      transparent: true,
+      opacity: 0.8,
+    });
+    const particles = new THREE.Points(heroGeometry, heroMaterial);
+    heroScene.add(particles);
+    heroCamera.position.z = 50;
+
+    const mouse = { x: 0, y: 0 };
+    window.addEventListener('mousemove', (e) => {
+      mouse.x = (e.clientX / window.innerWidth - 0.5) * 2;
+      mouse.y = -(e.clientY / window.innerHeight - 0.5) * 2;
+    });
+
+    function animateHero() {
+      requestAnimationFrame(animateHero);
+      particles.rotation.y += 0.001;
+      heroCamera.position.x = mouse.x * 10;
+      heroCamera.position.y = mouse.y * 10;
+      heroRenderer.render(heroScene, heroCamera);
+    }
+    animateHero();
+
+    // Hero Animations
+    gsap.fromTo(
+      '.hero-content > *',
+      { opacity: 0, y: 50 },
+      { opacity: 1, y: 0, stagger: 0.2, duration: 1, ease: 'power3.out', delay: 0.5 }
+    );
+
+    // Services Section - 3D Particles
+    const servicesCanvas = document.querySelector('.services-canvas');
+    const servicesScene = new THREE.Scene();
+    const servicesCamera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    const servicesRenderer = new THREE.WebGLRenderer({ canvas: servicesCanvas, alpha: true });
+    servicesRenderer.setSize(window.innerWidth, window.innerHeight);
+
+    const particleCountServices = 300;
+    const positionsServices = new Float32Array(particleCountServices * 3);
+    for (let i = 0; i < particleCountServices * 3; i++) {
+      positionsServices[i] = (Math.random() - 0.5) * 150;
+    }
+    const servicesGeometry = new THREE.BufferGeometry();
+    servicesGeometry.setAttribute('position', new THREE.BufferAttribute(positionsServices, 3));
+    const servicesMaterial = new THREE.PointsMaterial({
+      color: 0xFF00E6,
+      size: 0.4,
+      transparent: true,
+      opacity: 0.6,
+    });
+    const particlesServices = new THREE.Points(servicesGeometry, servicesMaterial);
+    servicesScene.add(particlesServices);
+    servicesCamera.position.z = 75;
+
+    function animateServices() {
+      requestAnimationFrame(animateServices);
+      particlesServices.rotation.y += 0.002;
+      servicesRenderer.render(servicesScene, servicesCamera);
+    }
+    animateServices();
+
+    // About Section - 3D Torus Knot
+    const aboutCanvas = document.querySelector('.about-canvas');
+    const aboutScene = new THREE.Scene();
+    const aboutCamera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    const aboutRenderer = new THREE.WebGLRenderer({ canvas: aboutCanvas, alpha: true });
+    aboutRenderer.setSize(window.innerWidth, window.innerHeight);
+
+    const torusGeometry = new THREE.TorusKnotGeometry(1, 0.3, 100, 16);
+    const torusMaterial = new THREE.MeshBasicMaterial({
+      color: 0x00DDEB,
+      wireframe: true,
+    });
+    const torus = new THREE.Mesh(torusGeometry, torusMaterial);
+    aboutScene.add(torus);
+
+    aboutCamera.position.z = 5;
+
+    function animateAbout() {
+      requestAnimationFrame(animateAbout);
+      torus.rotation.x += 0.01;
+      torus.rotation.y += 0.01;
+      aboutRenderer.render(aboutScene, aboutCamera);
+    }
+    animateAbout();
+
+    // Case Studies - 3D Cubes
+    const caseStudiesCanvas = document.querySelector('.case-studies-canvas');
+    const caseStudiesScene = new THREE.Scene();
+    const caseStudiesCamera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    const caseStudiesRenderer = new THREE.WebGLRenderer({ canvas: caseStudiesCanvas, alpha: true });
+    caseStudiesRenderer.setSize(window.innerWidth, window.innerHeight);
+
+    const cubeGeometry = new THREE.BoxGeometry(1, 1, 1);
+    const cubeMaterial = new THREE.MeshBasicMaterial({
+      color: 0x00DDEB,
+      wireframe: true,
+    });
+    const cubes = [];
+    for (let i = 0; i < 15; i++) {
+      const cube = new THREE.Mesh(cubeGeometry, cubeMaterial);
+      cube.position.set(
+        (Math.random() - 0.5) * 60,
+        (Math.random() - 0.5) * 60,
+        (Math.random() - 0.5) * 60
+      );
+      cubes.push(cube);
+      caseStudiesScene.add(cube);
+    }
+
+    caseStudiesCamera.position.z = 40;
+
+    function animateCaseStudies() {
+      requestAnimationFrame(animateCaseStudies);
+      cubes.forEach(cube => {
+        cube.rotation.x += 0.01;
+        cube.rotation.y += 0.01;
+      });
+      caseStudiesRenderer.render(caseStudiesScene, caseStudiesCamera);
+    }
+    animateCaseStudies();
+
+    // Reviews - 3D Torus
+    const reviewsCanvas = document.querySelector('.reviews-canvas');
+    const reviewsScene = new THREE.Scene();
+    const reviewsCamera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    const reviewsRenderer = new THREE.WebGLRenderer({ canvas: reviewsCanvas, alpha: true });
+    reviewsRenderer.setSize(window.innerWidth, window.innerHeight);
+
+    const reviewsTorusGeometry = new THREE.TorusGeometry(2, 0.5, 16, 100);
+    const reviewsTorusMaterial = new THREE.MeshBasicMaterial({
+      color: 0xFF00E6,
+      wireframe: true,
+    });
+    const reviewsTorus = new THREE.Mesh(reviewsTorusGeometry, reviewsTorusMaterial);
+    reviewsScene.add(reviewsTorus);
+
+    reviewsCamera.position.z = 7;
+
+    function animateReviews() {
+      requestAnimationFrame(animateReviews);
+      reviewsTorus.rotation.x += 0.01;
+      reviewsTorus.rotation.y += 0.01;
+      reviewsRenderer.render(reviewsScene, reviewsCamera);
+    }
+    animateReviews();
+
+    // Blog - 3D Particles
+    const blogCanvas = document.querySelector('.blog-canvas');
+    const blogScene = new THREE.Scene();
+    const blogCamera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    const blogRenderer = new THREE.WebGLRenderer({ canvas: blogCanvas, alpha: true });
+    blogRenderer.setSize(window.innerWidth, window.innerHeight);
+
+    const particleCountBlog = 200;
+    const positionsBlog = new Float32Array(particleCountBlog * 3);
+    for (let i = 0; i < particleCountBlog * 3; i++) {
+      positionsBlog[i] = (Math.random() - 0.5) * 120;
+    }
+    const blogGeometry = new THREE.BufferGeometry();
+    blogGeometry.setAttribute('position', new THREE.BufferAttribute(positionsBlog, 3));
+    const blogMaterial = new THREE.PointsMaterial({
+      color: 0x00DDEB,
+      size: 0.3,
+      transparent: true,
+      opacity: 0.7,
+    });
+    const particlesBlog = new THREE.Points(blogGeometry, blogMaterial);
+    blogScene.add(particlesBlog);
+    blogCamera.position.z = 60;
+
+    function animateBlog() {
+      requestAnimationFrame(animateBlog);
+      particlesBlog.rotation.y += 0.001;
+      blogRenderer.render(blogScene, blogCamera);
+    }
+    animateBlog();
+
+    // Contact - 3D Spheres
+    const contactCanvas = document.querySelector('.contact-canvas');
+    const contactScene = new THREE.Scene();
+    const contactCamera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    const contactRenderer = new THREE.WebGLRenderer({ canvas: contactCanvas, alpha: true });
+    contactRenderer.setSize(window.innerWidth, window.innerHeight);
+
+    const contactSphereGeometry = new THREE.SphereGeometry(0.5, 32, 32);
+    const contactSphereMaterial = new THREE.MeshBasicMaterial({
+      color: 0x00DDEB,
+      wireframe: true,
+    });
+    const contactSpheres = [];
+    for (let i = 0; i < 20; i++) {
+      const sphere = new THREE.Mesh(contactSphereGeometry, contactSphereMaterial);
+      sphere.position.set(
+        (Math.random() - 0.5) * 80,
+        (Math.random() - 0.5) * 80,
+        (Math.random() - 0.5) * 80
+      );
+      contactSpheres.push(sphere);
+      contactScene.add(sphere);
+    }
+
+    contactCamera.position.z = 50;
+
+    function animateContact() {
+      requestAnimationFrame(animateContact);
+      contactSpheres.forEach(sphere => {
+        sphere.rotation.x += 0.01;
+        sphere.rotation.y += 0.01;
+      });
+      contactRenderer.render(contactScene, contactCamera);
+    }
+    animateContact();
+
+    // Section Animations
+    gsap.fromTo(
+      '.services-grid > *, .portfolio h2, .portfolio-slider, .about-content > *, .case-studies-grid > *, .reviews h2, .reviews-slider, .contact-container > *',
+      { opacity: 0, y: 50 },
+      {
+        opacity: 1,
+        y: 0,
+        stagger: 0.2,
+        duration: 1,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: '.services, .portfolio, .about, .case-studies, .reviews, .contact',
+          start: 'top 80%',
+        },
+      }
+    );
+
+    // Blog Section Animation
+    gsap.fromTo(
+      '.blog-grid > *, .blog h2',
+      { opacity: 0, y: 50 },
+      {
+        opacity: 1,
+        y: 0,
+        stagger: 0.2,
+        duration: 1,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: '.blog',
+          start: 'top 100%',
+        },
+      }
+    );
+
+    // Swiper Initialization
+    new Swiper('.portfolio-slider', {
+      loop: true,
+      slidesPerView: 1,
+      spaceBetween: 10,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      autoplay: {
+        delay: 3000,
+      },
+      breakpoints: {
+        768: {
+          slidesPerView: 1,
+          spaceBetween: 10,
+        },
+        1024: {
+          slidesPerView: 1,
+          spaceBetween: 10,
+        },
+      },
+    });
+
+    new Swiper('.reviews-slider', {
+      loop: true,
+      slidesPerView: 1,
+      spaceBetween: 20,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      autoplay: {
+        delay: 5000,
+      },
+    });
+
+    // Scroll to Top
+    const scrollTop = document.querySelector('.scroll-top');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 500) {
+        scrollTop.classList.add('active');
+      } else {
+        scrollTop.classList.remove('active');
+      }
+    });
+
+    scrollTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Resize Handling
+    window.addEventListener('resize', () => {
+      heroCamera.aspect = window.innerWidth / window.innerHeight;
+      heroCamera.updateProjectionMatrix();
+      heroRenderer.setSize(window.innerWidth, window.innerHeight);
+
+      servicesCamera.aspect = window.innerWidth / window.innerHeight;
+      servicesCamera.updateProjectionMatrix();
+      servicesRenderer.setSize(window.innerWidth, window.innerHeight);
+
+      aboutCamera.aspect = window.innerWidth / window.innerHeight;
+      aboutCamera.updateProjectionMatrix();
+      aboutRenderer.setSize(window.innerWidth, window.innerHeight);
+
+      caseStudiesCamera.aspect = window.innerWidth / window.innerHeight;
+      caseStudiesCamera.updateProjectionMatrix();
+      caseStudiesRenderer.setSize(window.innerWidth, window.innerHeight);
+
+      reviewsCamera.aspect = window.innerWidth / window.innerHeight;
+      reviewsCamera.updateProjectionMatrix();
+      reviewsRenderer.setSize(window.innerWidth, window.innerHeight);
+
+      blogCamera.aspect = window.innerWidth / window.innerHeight;
+      blogCamera.updateProjectionMatrix();
+      blogRenderer.setSize(window.innerWidth, window.innerHeight);
+
+      contactCamera.aspect = window.innerWidth / window.innerHeight;
+      contactCamera.updateProjectionMatrix();
+      contactRenderer.setSize(window.innerWidth, window.innerHeight);
+    });
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+
+    // Scroll-driven gear animation
+    window.addEventListener('scroll', () => {
+      const gears = document.querySelectorAll('.mechanicalCogModule');
+      gears.forEach(gear => {
+        const gearTop = gear.getBoundingClientRect().top;
+        if (gearTop < window.innerHeight * 0.8) {
+          gear.style.opacity = '1';
+          gear.style.transform = 'translateZ(60px) rotateX(5deg)';
+        } else {
+          gear.style.opacity = '0.4';
+          gear.style.transform = 'translateZ(0) rotateX(0)';
+        }
+      });
+    });
+  </script>
+</body>
+</html>
